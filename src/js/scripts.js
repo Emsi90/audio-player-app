@@ -1,3 +1,5 @@
+window.onload = function() {
+
 (function() {
 
   function AudioVisualizer(audioContainer, canvas, btn) {
@@ -57,3 +59,5 @@
   var visualizer = new AudioVisualizer('#player', '#canvas', '.btn');
 
 })();
+
+}
