@@ -6,15 +6,22 @@ window.onload = function() {
 
     this.ctx = document.querySelector(canvas).getContext('2d');
     this.btn = document.querySelector(btn);
-    this.audioCtx = new AudioContext();
     this.audio = document.querySelector(audioContainer);
-    this.audioSrc = this.audioCtx.createMediaElementSource(this.audio);
-    this.analyser = this.audioCtx.createAnalyser();
-    this.audioSrc.connect(this.analyser);
-    this.audioSrc.connect(this.audioCtx.destination);
-    this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount);
+    this.audioCtx;
+    this.audioSrc;
+    this.analyser;
+    this.audioSrc;
+    this.audioSrc;
+    this.frequencyData;
 
     this.btn.addEventListener('click', function(e) {
+      this.audioCtx = new AudioContext();
+      this.audio = document.querySelector(audioContainer);
+      this.audioSrc = this.audioCtx.createMediaElementSource(this.audio);
+      this.analyser = this.audioCtx.createAnalyser();
+      this.audioSrc.connect(this.analyser);
+      this.audioSrc.connect(this.audioCtx.destination);
+      this.frequencyData = new Uint8Array(this.analyser.frequencyBinCount);
       this.play(e);
     }.bind(this), false);
 
